@@ -1,19 +1,5 @@
-Lista 1 - programação/Q7.exe
-Lista 3 - Programação/Q5.o
-Lista 3 - Programação/Q5.exe
-Lista 3 - Programação/Q1.o
-Lista 3 - Programação/Q1.exe
-Lista 3 - Programação/Q2.exe
-Lista 3 - Programação/Q2.o
-Lista 2 - Programação/Q5.o
-Lista 2 - Programação/Q5.exe
-Lista 2 - Programação/Q4.o
-Lista 2 - Programação/Q4.exe
-Lista 2 - Programação/Q3.o
-Lista 2 - Programação/Q3.exe
-Lista 2 - Programação/Q2.o
-Lista 2 - Programação/Q2.exe
-Lista 2 - Programação/Q1.o
-Lista 2 - Programação/Q1.exe
-Lista 1 - programação/Q8.exe
-Lista 3 - Programação/.vscode/tasks.json
+# Compiled C code
+*.o
+
+# Executable files
+*.exe
