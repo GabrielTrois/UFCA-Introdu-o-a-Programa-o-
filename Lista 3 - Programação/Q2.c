@@ -1,3 +1,6 @@
+/*2) Uma pessoa aplicou um capital de x reais a juros mensais de z durante 1 ano. Determinar o
+montante de cada mês durante este período considerando juros simples e juros compostos.*/
+
 #include <stdio.h>
 
 int main () {

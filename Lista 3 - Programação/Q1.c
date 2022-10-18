@@ -1,3 +1,5 @@
+//1) Dado um número inteiro positivo n, calcular a soma dos n primeiros números inteiros positivos
+
 #include <stdio.h>
 
 int main () {
