@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 # VS Code folder
 .vscode
 
 # Compiled code
+=======
+# Compiled C code
+>>>>>>> 8f38dbf5d25ca832628aa857edc1306bd6f240c7
 *.o
 
 # Executable files
