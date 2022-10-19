@@ -1,3 +1,6 @@
+/*1) Entrar com números inteiros em um vetor A[10]. Gerar e imprimir o vetor B onde
+cada elemento é o quadrado do elemento, na respectiva posição, do vetor A.*/
+
 #include <stdio.h>
 #define RANGE 10
 
