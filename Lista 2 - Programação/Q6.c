@@ -21,8 +21,8 @@ if (n == 1){
 // golden ratio
 for (counter = 2; counter <= n; counter ++){
     n3 = n1 + n2;
-    n2 = n3;
     n1 = n2;
+    n2 = n3;
 }
 
 printf ("O n-esimo termo da serie de Fibonacci e %lld", n3);
