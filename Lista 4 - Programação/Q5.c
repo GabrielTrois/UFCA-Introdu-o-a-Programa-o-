@@ -3,11 +3,15 @@ números inteiros de n algarismos, calcular a sequência de números que represe
 soma dos dois inteiros.*/
 
 #include <stdio.h>
-#define RANGE 2
+#include <math.h>
+#define RANGE 100
 
 int main () {
 
-    int n, v[RANGE], v2[RANGE], i;
+    int n, v[RANGE], v2[RANGE], i, a = 0;
+    float sum[2];
+    sum[1] = 0;
+    sum[2] = 0;
 
     printf ("Digite o tamanho das sequencias: ");
     scanf ("%d", &n);
@@ -26,6 +30,14 @@ int main () {
                 return 0;
         }
     }
+
+    for (i = n - 1; i >= 0; i--){
+        sum[1] += v[a] * pow(10, i);
+        sum[2] += v2[a] * pow(10, i);
+        a++;
+    }
+
+    printf ("%f", sum[1] + sum[2]);
 
 
     return 0;
