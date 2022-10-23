@@ -7,7 +7,7 @@ B-2, C-3, D-4 e E-5. São dados:
 
 #include <stdio.h>
 #define RANGE 100
-#define RANGE2 3
+#define RANGE2 10
 
 int main () {
 
