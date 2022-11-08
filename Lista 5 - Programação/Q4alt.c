@@ -19,7 +19,7 @@ int main () {
 }
 
 int square (int n) {
-    for (int i = 1; i <= n/2; i++){
+    for (float i = 1; i <= n/2; i++){
         if (n / i == i) return i;
     }
     return 0;

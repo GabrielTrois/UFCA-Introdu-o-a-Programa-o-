@@ -6,7 +6,7 @@ raíz quadrada for exata, e 0 em caso contrário.*/
 int RQ (int n);
 
 int RQ (int n) {
-    for (int i = 1; i <= n/2; i++){
+    for (float i = 1; i <= n/2; i++){
         if (n / i == i) return 1;
     }
     return 0;
