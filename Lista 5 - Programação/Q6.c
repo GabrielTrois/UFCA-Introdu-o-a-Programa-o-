@@ -2,15 +2,7 @@
 cidade i para a cidade j. Dado um itinerário com k cidades, calcular o custo total para o
 itinerário.*/
 
-#include <stdio.h>
-
-// n[linha][coluna]
-
-int main () {
-
-    int cont, n[3][3], a, i, j, sum = 0;
-
-        n[0][0] = 4;
+/*      n[0][0] = 4;
         n[0][1] = 1;
         n[0][2] = 2;
         n[0][3] = 3;
@@ -25,19 +17,37 @@ int main () {
         n[3][0] = 7;
         n[3][1] = 1;
         n[3][2] = 2;
-        n[3][3] = 5;
+        n[3][3] = 5;*/
 
-    printf ("Digite quantos intinerarios seram feitos: ");
-    scanf ("%d", &a);
+#include <stdio.h>
+#include <string.h>
+#define RANGE 4
 
-    printf ("Digite os valores de I e J\n");
+// n[linha][coluna]
 
-    for (cont = 0; cont < a; cont++){
-        scanf ("%d %d", &i, &j);
-        sum += n[i][j];
-    }
+int main () {
+
+    int cont, v[RANGE],n[3][3], i[RANGE], j[RANGE], t = 0, l = 0, sum = 0;
+
+    printf ("Digite os valores do vetor\n");
+
+        for (cont = 0; cont < RANGE; cont++){
+            scanf ("%d", &v[cont]);
+        }
+
+        for (cont = 0; cont < RANGE; cont++){
+            if (cont % 2 == 0){
+                i[l] = v[l];
+                l++;
+            }
+            else{
+                j[t] = v[t];
+                t++;
+            }
+            }
 
     printf ("A soma dos intinerarios da: %d", sum);
 
     return 0;
 }
+
