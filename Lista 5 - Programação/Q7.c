@@ -7,16 +7,6 @@ vetor.*/
 
 int sumarray (int v[], int size);
 
-int main () {
-    int v[RANGE], size = RANGE;
-
-    for (int i = 0; i < RANGE; i++){
-    scanf ("%d", &v[i]);
-    }
-
-    printf ("%d", sumarray (v, size));
-}
-
 int sumarray (int v[], int size) {
 
     int i;
