@@ -18,14 +18,18 @@ int main () {
 }
 
 int sumarray (int v[], int size) {
+
     int i;
 
-    for (i = 0; i < RANGE; i++);{
-        if (v[i] >= 0){
-            if (size == 0) return 0;
+    for (i = 0; i < RANGE; i++){
+        if (v[i] >= 0)
+            v[i] = v[i];
+        else 
+        v[i] = 0;
+    }
+    
+        if (size == 0) return 0;
 
-            return v[size - 1] + sumarray (v, size - 1);
-        }
-        return 0;
+        return v[size - 1] + sumarray (v, size - 1);
 }
-}
+
