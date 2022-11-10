@@ -3,7 +3,6 @@ vetor.*/
 
 #include <stdio.h>
 #include <string.h>
-#define RANGE 3
 
 int sumarray (int v[], int size);
 
@@ -11,7 +10,7 @@ int sumarray (int v[], int size) {
 
     int i;
 
-    for (i = 0; i < RANGE; i++){
+    for (i = 0; i < strlen(v); i++){
         if (v[i] >= 0)
             v[i] = v[i];
         else 
