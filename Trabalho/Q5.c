@@ -8,8 +8,20 @@ int MENOR (int v[], int size);
 
 int main () {
 
+    FILE *arq;
+
+    remove("log.txt");
+
+    arq = fopen("log.txt", "a");
+
+    if (arq == NULL){
+        printf ("Nao foi possivel abrir o arquivo");
+        scanf ("%d");
+        exit(0);
+    }
+
     int i = 1, size = 0, t = 0;
-    int *filhos, *idade, *mediaEX, *media;
+    int *filhos, *idade, *mediaEX;
     float *salario;
     char *sexo;
 
@@ -27,12 +39,15 @@ int main () {
 
         printf ("\nDados da pessoa %d\n\n", i);
 
+
         printf ("Digite sua idade: ");
         scanf ("%d", &idade[i-1]);
+                fprintf (arq, "idade[%d] = %d\n", (i-1), idade[i-1]);
 
             while (idade[i-1] < 0){
                 printf ("Idade invalido\nDigite uma idade valida: ");
-                 scanf ("%d", &idade[i-1]);
+                scanf ("%d", &idade[i-1]);
+                    fprintf (arq, "idade[%d](invalido) = %d\n", (i-1), idade[i-1]);
             } 
             
                 if (idade[i-1] == 0){
@@ -50,28 +65,39 @@ int main () {
                     printf ("A media da quantidade de filhos e de: %.1f Filhos\n", MEDIA (filhos, size));
                     printf ("O maior salario e de: %.2f Reais\n", MAIOR (salario, size));
                     printf ("A menor idade e de: %d Anos\n", MENOR (idade, size));
+
+                    fclose (arq);
                 return 0;
                 }
 
         printf ("Digite seu salario: ");
         scanf ("%f", &salario[i-1]);
+                fprintf (arq, "salario[%d] = %.2f\n", (i-1), salario[i-1]);
+
             while (salario[i-1] < 0){
                 printf ("Salario invalido\nDigite um valor valido: ");
-                 scanf ("%f", &salario[i-1]);
+                scanf ("%f", &salario[i-1]);
+                    fprintf (arq, "salario[%d](invalido) = %.2f\n", (i-1), salario[i-1]);
             }
         
         printf ("Digite seu sexo (M ou F): ");
         scanf ("%s", &sexo[i-1]);
+                fprintf (arq, "sexo[%d] = %c\n", (i-1), sexo[i-1]);
+
             while (sexo[i-1] != 'F' && sexo[i-1] != 'f' && sexo[i-1] != 'M' && sexo[i-1] != 'm'){
                 printf ("Sexo invalido\nDigite um sexo valido: ");
-                 scanf ("%c", &sexo[i-1]);
+                scanf ("%c", &sexo[i-1]);
+                    fprintf (arq, "sexo[%d](invalido) = %c\n", (i-1), sexo[i-1]);
             }
 
         printf ("Digite a quantidade de filhos que tem: ");
         scanf ("%d", &filhos[i-1]);
+                fprintf (arq, "filhos[%d] = %d\n\n", (i-1), filhos[i-1]);
+
             while (filhos[i-1] < 0){
                 printf ("Quantidade de filhos invalida\nDigite uma quantidade de filhos valida: ");
-                 scanf ("%d", &filhos[i-1]);
+                scanf ("%d", &filhos[i-1]);
+                    fprintf (arq, "filhos[%d](invalido) = %d\n\n", (i-1), filhos[i-1]);
             }
 
         i++;

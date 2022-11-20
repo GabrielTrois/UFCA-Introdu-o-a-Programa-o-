@@ -1,0 +1,11 @@
+idade[0] = 20
+salario[0] = 2000.00
+sexo[0] = f
+filhos[0] = 2
+
+idade[1] = 18
+salario[1] = 1000.00
+sexo[1] = m
+filhos[1] = 1
+
+idade[2] = 0
