@@ -8,7 +8,8 @@ int MENOR (int v[], int size);
 
 int main () {
 
-    int *filhos, *idade, *mediaEX, *media, i = 1, size = 0, t = 0;
+    int i = 1, size = 0, t = 0;
+    int *filhos, *idade, *mediaEX, *media;
     float *salario;
     char *sexo;
 
@@ -28,11 +29,12 @@ int main () {
 
         printf ("Digite sua idade: ");
         scanf ("%d", &idade[i-1]);
+
             while (idade[i-1] < 0){
                 printf ("Idade invalido\nDigite uma idade valida: ");
                  scanf ("%d", &idade[i-1]);
-            }
-                
+            } 
+            
                 if (idade[i-1] == 0){
                     for (i = 0; i < size; i++){
                             if (sexo[i] == 'f' || sexo[i] == 'F' && salario[i] < 300){
