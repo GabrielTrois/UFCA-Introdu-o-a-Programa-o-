@@ -8,6 +8,6 @@ float midarray (int v[], int size);
 float midarray (int v[], int size){
     if (size == 0) return 0;
 
-    else if (size == 5) return (v[size - 1] + midarray(v, size - 1)) / 5;
+    else if (size == strlen(v)) return (v[size - 1] + midarray(v, size - 1)) / strlen(v);
     else return v[size - 1] + midarray(v, size - 1);
 }
