@@ -92,29 +92,29 @@ float MAIOR (float v[], int size){
     float maior;
     int i;
 
-    for (i = 0; i < size; i++){
-        if (i == 0)
-            maior = v[0];
+        for (i = 0; i < size; i++){
+            if (i == 0)
+                maior = v[0];
 
-        else{
-            if (v[i] > maior)
-             maior = v[i];
-        }
-    return maior;
-}
+            else{
+                if (v[i] > maior)
+                maior = v[i];
+            }
+        return maior;
+    }
 }
 
 int MENOR (int v[], int size){
     int menor, i;
 
-    for (i = 0; i < size; i++){
-        if (i == 0)
-            menor = v[0];
+        for (i = 0; i < size; i++){
+            if (i == 0)
+                menor = v[0];
 
-        else{
-            if (v[i] < menor)
-             menor = v[i];
-        }
-    return menor;
-}
+            else{
+                if (v[i] < menor)
+                menor = v[i];
+            }
+        return menor;
+    }
 }
