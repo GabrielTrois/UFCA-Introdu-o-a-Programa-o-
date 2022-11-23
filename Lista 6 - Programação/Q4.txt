@@ -1,0 +1,15 @@
+int x = 100, *p, **pp;
+p = &x;
+pp = &p;
+printf(“Valor de pp: %d\n”, **pp);
+
+
+O programa irá imprimir 100.
+
+Na primeira linha as variaveis são declaradas, x com valor de 100, o ponteiro  p e o ponteiro de arrays pp.
+
+Na segunda linha, o ponteiro p aponta para o valor de x, ou seja, 100.
+
+Na terceira linha, o ponteiro pp aponta para o valor do ponteiro p, que por sua vez esta apontando para o valor de x.
+
+Na ultima linha é pedido que se imprima o valor de pp, que no caso é 100.
