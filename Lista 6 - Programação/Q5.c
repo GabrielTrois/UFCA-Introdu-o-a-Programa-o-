@@ -22,15 +22,15 @@ int main () {
     printf ("Digite uma letra: ");
     scanf ("%c", &c);
 
-    vc = (int*)malloc(sizeof(int));
+    position (v, c, size, i);
+
+    vc = (int*)malloc(u*sizeof(int));
 
     for (i = 0; i <= strlen(v); i++){
-        position (v, c, size, i);
-        if (position (v, c, size, i) != 0){
             vc[j] = (position (v, c, size, i) != 0);
             j++;
             vc = (int*)realloc(vc, (j+1)*sizeof(int));
-        }
+        
     }
 
     for (i = 0; i <= u; i++){
@@ -42,16 +42,21 @@ int main () {
 }
 
 int position (char v[], char c, int *size, int i){
-    int vc, tam = 0;
+    int *vc, tam = 0, j;
 
-        if (v[i] == c){
-            vc = i;
+    vc = (int*)malloc(sizeof(int));
+
+    for (j = 0; j <= strlen(v); j++){
+        if (v[j] == c){
+            vc = j;
             tam ++;
+            
+            vc = (int*)realloc(vc, (tam+1)*sizeof(int));
 
-            *size += tam;
-
-            return vc;
+            return vc[i];
         }
+    }
+    *size = tam;
 
     return 0;
 }
