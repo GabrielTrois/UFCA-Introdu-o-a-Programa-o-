@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-int countChar (char *str, char c);
-
 int main () {
 
     FILE *file;
@@ -18,29 +16,19 @@ int main () {
         exit(0);
     }
 
-    char text[500];
-    char c = ".";
+    char ch;
+    int line = 0;
 
-    fscanf (file, "%[^\n]s\n", text);
-    printf ("%s\n", text);
-    printf ("%d", countChar (text, c));
+    while (ch != EOF){
+        ch = fgetc(file);
+        //printf("%c", ch);
+          if (ch == '.')
+            line++;
+    }
 
-    /*while (!feof(file)){
-        printf ("%s\n", text);
-    }*/
         fclose(file);
 
+        printf ("\nA quantidade de linhas e de: %d\n", line);
+
     return 0;
-}
-
-int countChar(char *str, char c) {
-  char* nextChar = strchr(str, c);
-  int count = 0;
-
-  while (nextChar) {
-    count++;
-    nextChar = strchr(nextChar + 1, c);
-  }
-
-  return count;
 }
