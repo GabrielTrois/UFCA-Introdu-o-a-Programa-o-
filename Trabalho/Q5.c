@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 float MEDIA (int v[], int size);
 float MAIOR (float v[], int size);
@@ -10,7 +11,7 @@ int main () {
 
     FILE *arq;
 
-    remove("log.txt");
+    //remove("log.txt");
 
     arq = fopen("log.txt", "a");
 
@@ -25,15 +26,23 @@ int main () {
     float *salario;
     char *sexo;
 
+
+        struct tm* ptr;
+        time_t timestamp;
+        timestamp = time(NULL);
+        ptr = localtime(&timestamp);
+        fprintf(arq, "%s\n\n", asctime(ptr));
+
+
     salario = (int*)malloc(1*sizeof(int));
-    sexo = (int*)malloc(1*sizeof(int));
-    filhos = (int*)malloc(1*sizeof(int));
+    sexo = (char*)malloc(1*sizeof(char));
+    filhos = (float*)malloc(1*sizeof(float));
     idade = (int*)malloc(1*sizeof(int));
     mediaEX = (int*)malloc(1*sizeof(int));
 
     while (1){
-        salario = (int*)realloc(salario, i*sizeof(int));
-        sexo = (int*)realloc(sexo, i*sizeof(int));
+        salario = (float*)realloc(salario, i*sizeof(float));
+        sexo = (char*)realloc(sexo, i*sizeof(char));
         filhos = (int*)realloc(filhos, i*sizeof(int));
         idade = (int*)realloc(idade, i*sizeof(int));
 
@@ -59,12 +68,25 @@ int main () {
                             }
                             else{}
                     }
+                    float m1, m2, m3, big, small;
+
+                    m1 = MEDIA (mediaEX, t);
+                    m2 = MEDIA (idade, size);
+                    m3 = MEDIA (filhos, size);
+                    big = MAIOR (salario, size);
+                    small = MENOR (idade, size);
 
                     printf ("\nA media da idade das mulheres com menos de 300 reais de salario e de: %.f Anos\n", MEDIA (mediaEX, t));
                     printf ("A media das idades e de: %.f Anos\n", MEDIA (idade, size));
                     printf ("A media da quantidade de filhos e de: %.1f Filhos\n", MEDIA (filhos, size));
                     printf ("O maior salario e de: %.2f Reais\n", MAIOR (salario, size));
                     printf ("A menor idade e de: %d Anos\n", MENOR (idade, size));
+
+                    fprintf (arq, "\nm1 = %.f\n", m1);
+                    fprintf (arq, "m2 = %.f\n", m2);
+                    fprintf (arq, "m3 = %.1f\n", m3);
+                    fprintf (arq, "big = %.2f\n", big);
+                    fprintf (arq, "small = %.2f\n", small);
 
                     fclose (arq);
                 return 0;
@@ -126,8 +148,8 @@ float MAIOR (float v[], int size){
                 if (v[i] > maior)
                 maior = v[i];
             }
-        return maior;
     }
+        return maior;
 }
 
 int MENOR (int v[], int size){
@@ -141,6 +163,6 @@ int MENOR (int v[], int size){
                 if (v[i] < menor)
                 menor = v[i];
             }
-        return menor;
     }
+        return menor;
 }
