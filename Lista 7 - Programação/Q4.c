@@ -12,7 +12,7 @@ int main () {
     printf ("Digite quantos alunos serao cadastrados: ");
     scanf ("%d", &n);
 
-    char nome[100][n];
+    char nome[n][100];
     float nota1[n], nota2[n], mat[n], med[n];
 
     for (i = 0; i < n; i++){
