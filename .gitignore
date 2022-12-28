@@ -13,3 +13,6 @@
 
 # RAR files
 *.rar
+
+# IDEA Folder
+.idea
